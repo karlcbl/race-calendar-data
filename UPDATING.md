@@ -9,7 +9,8 @@ A scheduled task updates `races.json` (daily in December and January, every thre
 3. **Route presentations** for stage races (Tour, Giro, Vuelta, Paris–Nice, women's races and so on): fill `stages` (number, date, start, finish, type) and update `locations` to the real start/finish towns with coordinates, then remove the "not announced" `locationNote`.
 4. **Calendar changes**: date changes, cancellations, new races in the disciplines already in the file (road WorldTour and elite UCI races held in European countries, Worlds, UEC European Championships, cyclocross World Cup / Euros / Worlds, MTB World Cup XCO and DHI, MTB Worlds and Euros). Elite UCI races only: no junior, U23-only, amateur or regional races. Use the UCI calendar and the UEC calendar (uec.ch) as the reference for which races exist. When a UEC European Championships host is announced (road, cyclocross, MTB), add it.
 5. **Broadcast rights** for Spain (`ES`) and the United States (`US`) when 2027 deals are announced.
-6. **Rider list**: if a rider moves team for 2027, update `team`. Once the 2026–27 cyclocross World Cup standings exist, re-rank the CX riders from the official standings (keep the existing ids for riders still in the top 10).
+6. **Official websites**: races may have a `website` (official race site, https) and optional `links` (list of `{"title", "url"}`, e.g. route page, start list). Add the official website for races missing one, verified from a search result, never guessed.
+7. **Rider list**: if a rider moves team for 2027, update `team`. Once the 2026–27 cyclocross World Cup standings exist, re-rank the CX riders from the official standings (keep the existing ids for riders still in the top 10).
 
 ## Rules
 
