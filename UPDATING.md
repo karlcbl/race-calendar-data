@@ -21,3 +21,9 @@ A scheduled task updates `races.json` (daily in December and January, every thre
 - Set `dataVersion` to the current time (`YYYY-MM-DDTHH:MM`, Europe/Madrid) whenever anything changes. If nothing changed, do not commit.
 - Validate the file with `python3 tools/validate.py` before committing.
 - Commit as `Claude <noreply@anthropic.com>` with a message listing the changes.
+
+## Open work (do these as sources become available)
+
+- **Women's elite UCI races in Europe (ProSeries and class 1: 1.1, 2.1, 1.Pro, 2.Pro).** Karl wants these alongside the men's races, but no readable 2027 women's ProSeries/class-1 calendar was available when the men's races were added (Nov 2026). Each run, check the UCI calendar and cycling media for the 2027 women's calendar and add every European women's ProSeries and class 1 race (ids `name-w-2027`, gender `women`, category `UCI ProSeries` or `UCI Europe Tour`). Skip class 2 (1.2/2.2), junior and U23 races.
+- **Stage races with "end date to be confirmed"** in `locationNote` were added with `endDate` equal to `startDate`. Look up the real end date (velowire.com race pages and organiser sites list them), set `endDate`, and remove that part of the note.
+- **Locations shown at a country's centre** ("Venue to be confirmed") need the real host town and coordinates once announced.
