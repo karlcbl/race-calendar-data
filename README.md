@@ -8,3 +8,5 @@ The app downloads `races.json` from this repository on launch and every few hour
 - `tools/build_data.py` – script that generated the initial calendar
 
 Bump `dataVersion` (ISO date/time, e.g. `2026-11-02T13:10`) on every change so the app picks it up.
+
+`latestUpdate` holds a plain-words summary of the most recent change (`version` equals `dataVersion`, plus `title` and `items`) for the app to show as a pop-up on its home screen.

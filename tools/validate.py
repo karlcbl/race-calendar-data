@@ -11,6 +11,16 @@ for key in ("schemaVersion", "dataVersion", "viewingCountries", "riders", "races
     if key not in d:
         errors.append(f"missing top-level key {key}")
 
+lu = d.get("latestUpdate")
+if lu is not None:
+    if lu.get("version") != d.get("dataVersion"):
+        errors.append("latestUpdate.version must equal dataVersion")
+    items = lu.get("items")
+    if not isinstance(lu.get("title"), str) or not lu.get("title"):
+        errors.append("latestUpdate.title missing")
+    if not isinstance(items, list) or not items or not all(isinstance(i, str) and i for i in items):
+        errors.append("latestUpdate.items must be a non-empty list of strings")
+
 race_ids = set()
 for r in d.get("races", []):
     rid = r.get("id", "?")

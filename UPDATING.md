@@ -20,6 +20,7 @@ A scheduled task updates `races.json` (daily in December and January, every thre
 - Allowed `discipline` values: `road`, `cx`, `xco`, `dhi`. Allowed `gender`: `men`, `women`, `all`. Any other value breaks the app, so never add a new discipline.
 - Keep race `id`s stable. A new race gets a new id in the same style (`name-gender-2027`).
 - Set `dataVersion` to the current time (`YYYY-MM-DDTHH:MM`, Europe/Madrid) whenever anything changes. If nothing changed, do not commit.
+- Whenever anything changes, replace `latestUpdate` (top level) with `{"version": <same as dataVersion>, "title": "Race data updated", "items": [...]}`. Each item is one short plain-words line a user would care about (e.g. "Giro d'Italia 2027: all 21 stages added", "Pogačar: Tour de France 2027 planned"). Leave out internal housekeeping (website checks, UPDATING.md notes). The app shows these items in a pop-up on its home screen.
 - Validate the file with `python3 tools/validate.py` before committing.
 - Commit as `Claude <noreply@anthropic.com>` with a message listing the changes.
 
